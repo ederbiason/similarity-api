@@ -1,5 +1,6 @@
 import Navbar from '@/components/Navbar'
 import Providers from '@/components/Providers'
+import { Toaster } from '@/components/ui/toast'
 
 import { cn } from '@/lib/utils'
 import '@/styles/globals.css'
@@ -18,6 +19,9 @@ export default function RootLayout({
         <Providers>
           {children}
 
+          <Toaster position='bottom-right' />
+
+          {/* @ts-expect-error Server Component */}
           <Navbar />
         </Providers>
 
