@@ -7,6 +7,7 @@ import LargeHeading from "@/ui/LargeHeading"
 import Paragraph from "@/ui/Paragraph"
 import { Input } from "@/ui/Input"
 import Table from "@/ui/Table"
+import ApiKeyOptions from "@/components/ApiKeyOptions"
 
 const ApiDashboard = async () => {
   const user = await getServerSession(authOptions)
@@ -47,7 +48,10 @@ const ApiDashboard = async () => {
 
         <Input className="w-fit truncate" readOnly value={activeApiKey.key} />
 
-        {/* add options to create new / revoke / */}
+        <ApiKeyOptions 
+          apiKeyKey={activeApiKey.key} 
+          apiKeyId={activeApiKey.id}
+        /> 
       </div>
 
       <Paragraph className="text-center md:text-left mt-4 -mb-4">
